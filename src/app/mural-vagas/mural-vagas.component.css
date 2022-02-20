@@ -1,0 +1,15 @@
+.lista_vagas{
+  display: flex;
+  flex-direction: row;
+  background-color: blue;
+  background-image: linear-gradient(to right, rgb(11, 18, 63) , rgb(239, 241, 245), rgb(11, 18, 63) );
+}
+
+.lista_vagas .card{
+  margin: 5px 10px;
+  min-height: 500px;
+  margin-left: 150%;
+
+}
+
+

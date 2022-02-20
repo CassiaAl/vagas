@@ -1,0 +1,58 @@
+<br><br>
+<div class="container">
+<h3>Cadastro de Vagas</h3>
+<hr>
+<br>
+<form>
+  <div class="input-group">
+    <span class="input-group-text" id="basic-addon1">Id</span>
+    <input type="text" class="form-control" placeholder="Id"  aria-describedby="basic-addon1"  name="id" [(ngModel)] = "vaga.id" style="width: 20%;">
+  </div>
+ <br>
+ <div class="input-group mb-4">
+  <span class="input-group-text" id="basic-addon1">Nome</span>
+  <input type="text" class="form-control" placeholder="Nome "  aria-describedby="basic-addon1"  name="nome" [(ngModel)] = "vaga.nome">
+</div>
+
+<div class="input-group mb-4">
+  <span class="input-group-text" id="basic-addon1">Foto</span>
+  <input type="text" class="form-control" placeholder="Foto"  aria-describedby="basic-addon1"  name="foto" [(ngModel)] = "vaga.foto">
+</div>
+
+<div class="input-group mb-4">
+  <span class="input-group-text" id="basic-addon1">Descrição</span>
+  <input type="text" class="form-control" placeholder="Descrição"  aria-describedby="basic-addon1"  name="descricao" [(ngModel)] = "vaga.descricao">
+</div>
+
+<div class="input-group mb-4">
+  <span class="input-group-text" id="basic-addon1">Salário</span>
+  <input type="text" class="form-control" placeholder="Salário"  aria-describedby="basic-addon1"  name="salario" [(ngModel)] = "vaga.salario">
+</div>
+<br><br>
+     <hr>
+    <button  class="btn btn-primary" type="button" (click)="cadastrar()"style="margin-right: 10px;">Cadastrar Vaga</button>
+    <button class="btn btn-primary" type="button" (click)="atualizar(vaga.id)"style="margin-right: 10px;">Atualizar Vaga</button>
+    <button  class="btn btn-primary"type="button" (click)="excluir(vaga.id)">Excluir Vaga</button>
+    <hr>
+</form>
+
+
+<section class="lista-vagas">
+    <div *ngFor="let vaga of vagas">
+
+        <div class="card" style="width: 18rem;">
+            <img src="assets\img\vagas\{{vaga.foto}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Código da Vaga: {{vaga.id}}</h5>
+              <h5 class="card-title">Vaga: {{vaga.nome}}</h5>
+              <p class="card-text">Descricão da Vaga: {{vaga.descricao}}</p>
+              <p class="card-text">Salário: R$ {{vaga.salario}},00</p>
+
+              <button  class="btn btn-primary" type="button" (click)="atualizar(vaga.id)" style="margin-right: 10px;">Atualizar Vaga</button >
+                <button  class="btn btn-primary"  type="button" (click)="excluir(vaga.id)">Excluir Vaga</button>
+            </div>
+          </div>
+
+    </div>
+</section>
+</div>
